@@ -1,0 +1,14 @@
+# Keeps the free Render n8n service awake so the professor never waits for a cold start.
+# Render free services sleep after 15 min without traffic; this pings every 10 min.
+# Set the repository variable N8N_BASE_URL, e.g. https://soc-n8n.onrender.com
+name: keep-alive
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping n8n health endpoint
+        run: curl -fsS --max-time 120 "${{ vars.N8N_BASE_URL }}/healthz" || echo "n8n was asleep - wake-up triggered"

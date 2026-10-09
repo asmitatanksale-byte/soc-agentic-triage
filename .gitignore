@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+app/audit_log.jsonl
+app/.streamlit/secrets.toml
+.env
+*.log
+node_modules/

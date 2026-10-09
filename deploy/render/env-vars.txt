@@ -1,0 +1,21 @@
+# Render → soc-n8n service → Environment → add these (replace the <...> values)
+PORT=5678
+N8N_PORT=5678
+N8N_PROTOCOL=https
+N8N_PROXY_HOPS=1
+N8N_HOST=<your-service>.onrender.com
+WEBHOOK_URL=https://<your-service>.onrender.com/
+N8N_EDITOR_BASE_URL=https://<your-service>.onrender.com/
+DB_TYPE=postgresdb
+DB_POSTGRESDB_HOST=<neon host>
+DB_POSTGRESDB_PORT=5432
+DB_POSTGRESDB_DATABASE=neondb
+DB_POSTGRESDB_USER=<neon user>
+DB_POSTGRESDB_PASSWORD=<neon password>
+DB_POSTGRESDB_SSL_ENABLED=true
+N8N_ENCRYPTION_KEY=<long random text - never change it>
+GENERIC_TIMEZONE=Asia/Kolkata
+EXECUTIONS_DATA_PRUNE=true
+EXECUTIONS_DATA_MAX_AGE=168
+N8N_DIAGNOSTICS_ENABLED=false
+NODE_OPTIONS=--max-old-space-size=384
